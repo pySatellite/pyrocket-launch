@@ -1,0 +1,15 @@
+[project]
+name = "pyrocket-launch"
+version = "0.1.0"
+description = "Rocket Simulation Toy"
+authors = [
+    {name = "pysatellite", email = "pysatellite@gmail.com"},
+]
+dependencies = []
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
