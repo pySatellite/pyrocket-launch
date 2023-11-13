@@ -5,8 +5,11 @@ description = "Rocket Simulation Toy"
 authors = [
     {name = "pysatellite", email = "pysatellite@gmail.com"},
 ]
-dependencies = []
-requires-python = ">=3.8"
+dependencies = [
+    "glfw>=2.6.2",
+    "p5>=0.7.1",
+]
+requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
 
