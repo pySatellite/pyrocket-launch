@@ -1,9 +1,9 @@
 [project]
 name = "pyrocket-launch"
-version = "0.1.0"
+version = "0.3.0"
 description = "Rocket Simulation Toy"
 authors = [
-    {name = "pySatellite", email = "pysatellite@gmail.com"},
+    {name = "pysatellite", email = "pysatellite@gmail.com"},
 ]
 dependencies = [
     "glfw>=2.6.2",
@@ -17,6 +17,12 @@ license = {text = "MIT"}
 requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools.packages.find]
+# scanning for namespace packages is true by default in pyproject.toml, so
+# you do NOT need to include the following line.
+namespaces = true
+where = ["src"]
+
 [tool.setuptools.package-data]
 "pyrocket_launch.images" = ["planet.png", "rocket.png"]
 
@@ -26,5 +32,4 @@ build-backend = "setuptools.build_meta"
 "Bug Tracker" = "https://github.com/pySatellite/pyrocket-launch/issues"
 
 [project.scripts]
-pyrocket-ping = 'pyrocket_launch.ping:run'
-pyrocket-launch = 'pyrocket_launch.main:__main__'
+pyrocket-launch = 'pyrocket_launch.main:run'

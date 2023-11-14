@@ -3,6 +3,7 @@
 # Import library code
 from p5 import *
 from random import randint
+import os
 
 
 # Setup global variables
@@ -11,14 +12,16 @@ rocket_y = screen_size
 burn = 100
 orbit_radius = 250
 orbit_y = screen_size - orbit_radius
+image_path = os.path.join(os.path.dirname(__file__), "images")
 
 
 def setup():
+    print(image_path)
     size(screen_size, screen_size)
     image_mode(CENTER)
     global planet, rocket
-    planet = load_image('./images/planet.png')
-    rocket = load_image('./images/rocket.png')
+    planet = load_image(f'/Users/m2/code/pysatellite/pyrocket-launch/src/pyrocket_launch/images/planet.png')
+    rocket = load_image(f'/Users/m2/code/pysatellite/pyrocket-launch/src/pyrocket_launch/images/rocket.png')
 
 
 def draw_rocket():
@@ -63,7 +66,11 @@ def draw():
     draw_background()
     draw_rocket()
 
-
+print(image_path)
 fuel = int(input('How many kilograms of fuel do you want to use? '))
 # fuel = 50000
 run()
+
+if __name__ == "__main__":
+    # execute only if run as a script
+    run()
