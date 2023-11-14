@@ -10,11 +10,6 @@ screen_size = 400
 rocket_y = screen_size
 burn = 100
 
-# The draw_rocket function goes here
-
-
-# The draw_background function goes here
-
 
 def setup():
     size(screen_size, screen_size)
@@ -52,6 +47,7 @@ def draw_background():
 def draw():
     draw_background()
     draw_rocket()
+
 
 fuel = int(input('How many kilograms of fuel do you want to use?'))
 run()
