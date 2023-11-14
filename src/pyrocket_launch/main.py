@@ -28,12 +28,12 @@ def setup():
 def draw_rocket():
     global rocket_y  # Use the global rocket_y variable
     rocket_y -= 1  # Move the rocket
-    image(rocket, 300/2, rocket_y, 64, 64)
+    image(rocket, 400/2, rocket_y, 64, 64)
 
 
 def draw_background():
     background(0)  # Short for background(0, 0, 0) — black
-    image(planet, 300/2, 300, 300, 300)  # Draw the image
+    image(planet, 400/2, 400, 300, 300)  # Draw the image
 
 
 def draw():
