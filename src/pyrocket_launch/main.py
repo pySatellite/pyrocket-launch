@@ -28,7 +28,18 @@ def setup():
 def draw_rocket():
     global rocket_y  # Use the global rocket_y variable
     rocket_y -= 1  # Move the rocket
-    image(rocket, 400/2, rocket_y, 64, 64)
+
+    no_stroke()
+
+    for i in range(25):
+        fill(255, 255 - i * 10, 0)
+        ellipse(screen_size/2, rocket_y + i, 8, 3)
+
+    fill(200, 200, 200, 100)
+    for i in range(20):
+        ellipse(screen_size/2 + randint(-5, 5), rocket_y + randint(20, 50), randint(5, 10), randint(5, 10))
+
+    image(rocket, screen_size/2, rocket_y, 64, 64)
 
 
 def draw_background():
