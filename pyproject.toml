@@ -14,5 +14,22 @@ readme = "README.md"
 license = {text = "MIT"}
 
 [build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+# scanning for namespace packages is true by default in pyproject.toml, so
+# you do NOT need to include the following line.
+namespaces = true
+where = ["src"]
+
+[tool.setuptools.package-data]
+"pyrocket_launch.images" = ["planet.png", "rocket.png"]
+
+
+[project.urls]
+"Homepage" = "https://github.com/pySatellite/pyrocket-launch"
+"Bug Tracker" = "https://github.com/pySatellite/pyrocket-launch/issues"
+
+[project.scripts]
+pyrocket-launch = 'pyrocket_launch.main:run'

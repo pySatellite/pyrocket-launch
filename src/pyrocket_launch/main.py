@@ -17,8 +17,8 @@ def setup():
     size(screen_size, screen_size)
     image_mode(CENTER)
     global planet, rocket
-    planet = load_image('planet.png')
-    rocket = load_image('rocket.png')
+    planet = load_image('./images/planet.png')
+    rocket = load_image('./images/rocket.png')
 
 
 def draw_rocket():
@@ -64,5 +64,6 @@ def draw():
     draw_rocket()
 
 
-fuel = int(input('How many kilograms of fuel do you want to use?'))
+fuel = int(input('How many kilograms of fuel do you want to use? '))
+# fuel = 50000
 run()
