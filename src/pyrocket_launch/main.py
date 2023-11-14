@@ -9,6 +9,8 @@ from random import randint
 screen_size = 400
 rocket_y = screen_size
 burn = 100
+orbit_radius = 250
+orbit_y = screen_size - orbit_radius
 
 
 def setup():
@@ -22,7 +24,7 @@ def setup():
 def draw_rocket():
     global rocket_y, fuel, burn  # Use the global rocket_y variable
 
-    if fuel >= burn:
+    if fuel >= burn and rocket_y > orbit_y:
         rocket_y -= 1  # Move the rocket
         fuel -= burn
         print('Fuel left: ', fuel)
@@ -36,12 +38,25 @@ def draw_rocket():
         for i in range(20):
             ellipse(screen_size/2 + randint(-5, 5), rocket_y + randint(20, 50), randint(5, 10), randint(5, 10))
 
+        if fuel < burn and rocket_y > orbit_y:  # No more fuel and not in orbit
+            tint(255, 0, 0)  # Failure
+        elif fuel < 1000 and rocket_y <= orbit_y:
+            tint(0, 255, 0)
+        elif fuel >= 1000 and rocket_y <= orbit_y:
+            tint(255, 200, 0)
+
     image(rocket, screen_size/2, rocket_y, 64, 64)
+    # no_tint()
 
 
 def draw_background():
     background(0)  # Short for background(0, 0, 0) — black
     image(planet, 400/2, 400, 300, 300)  # Draw the image
+
+    no_fill()
+    stroke(255)
+    stroke_weight(2)
+    ellipse(screen_size/2, screen_size, orbit_radius * 2, orbit_radius * 2)
 
 
 def draw():
